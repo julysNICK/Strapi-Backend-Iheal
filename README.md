@@ -6,16 +6,12 @@ A quick description of your strapi application
 
 **Backend**
 
-See full instructions [here](https://github.com/strapi/strapi-starter-blog)
-
-**Frontend**
-
 ```bash
 git clone https://github.com/julysNICK/Strapi-Backend-Iheal.git
 cd Strapi-Backend-Iheal
 ```
 
-#### Start the frontend server
+#### Start the backend server
 
 ```bash
 # Using yarn
