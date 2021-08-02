@@ -12,8 +12,8 @@ module.exports = {
 
 
     if (IsStore === true) {
-      const { name, description, price, image, stock } = ctx.request.body;
-      const product = { name, description, price, image, stock, user_creator: id };
+      const { name, description, slug, price, image, stock } = ctx.request.body;
+      const product = { name, description, slug, price, image, stock, user_creator: id };
       const entity = await strapi.services.product.create(product);
 
       return sanitizeEntity(entity, { model: strapi.models.product });
@@ -66,6 +66,15 @@ module.exports = {
       return newEntities.map(entity => sanitizeEntity(entity, { model: strapi.models.product }));
     }
 
+  },
+
+  async delete(ctx) {
+    const { id, IsStore } = ctx.state.user;
+
+    if (IsStore === true) {
+      const entity = await strapi.services.restaurant.delete({ id });
+      return sanitizeEntity(entity, { model: strapi.models.restaurant });
+    }
   },
   async owner(ctx) {
     const { id, IsStore } = ctx.state.user ? ctx.state.user : {};
