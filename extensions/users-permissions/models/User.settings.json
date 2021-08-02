@@ -14,56 +14,76 @@
       "type": "string",
       "minLength": 3,
       "unique": true,
-      "configurable": false,
       "required": true
     },
     "email": {
       "type": "email",
       "minLength": 6,
-      "configurable": false,
       "required": true
     },
     "provider": {
-      "type": "string",
-      "configurable": false
+      "type": "string"
     },
     "password": {
       "type": "password",
       "minLength": 6,
-      "configurable": false,
       "private": true
     },
     "resetPasswordToken": {
       "type": "string",
-      "configurable": false,
       "private": true
     },
     "confirmationToken": {
       "type": "string",
-      "configurable": false,
       "private": true
     },
     "confirmed": {
       "type": "boolean",
-      "default": false,
-      "configurable": false
+      "default": false
     },
     "blocked": {
       "type": "boolean",
-      "default": false,
-      "configurable": false
+      "default": false
     },
     "role": {
+      "configurable": true,
       "model": "role",
       "via": "users",
-      "plugin": "users-permissions",
-      "configurable": false
+      "plugin": "users-permissions"
     },
     "address": {
       "type": "string",
       "maxLength": 255,
       "required": true,
       "minLength": 5
+    },
+    "IsStore": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "products": {
+      "via": "user_creator",
+      "collection": "product"
+    },
+    "orders": {
+      "via": "user_order",
+      "collection": "order"
+    },
+    "product_own": {
+      "via": "users_owner",
+      "model": "product"
+    },
+    "cep": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string"
     }
   }
 }

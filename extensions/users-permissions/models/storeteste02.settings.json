@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "storeteste02s",
+  "info": {
+    "name": "storeteste02",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "minLength": 6
+    },
+    "provider": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password",
+      "private": false,
+      "minLength": 6
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "role": {
+      "plugin": "users-permissions",
+      "model": "role",
+      "via": "stores"
+    }
+  }
+}

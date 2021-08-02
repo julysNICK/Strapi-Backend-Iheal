@@ -1,0 +1,15 @@
+{
+  "kind": "collectionType",
+  "collectionName": "storeteste02s",
+  "info": {
+    "name": "storeteste02",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

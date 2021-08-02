@@ -1,0 +1,84 @@
+
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/login/storeteste-02-s",
+      "handler": "Authh.callback",
+      "config": {
+        "policies": ["plugins::users-permissions.ratelimit"],
+        "prefix": "",
+        "description": "Register a new user with the default role",
+        "tag": {
+          "plugin": "users-permissions",
+          "name": "Storeteste02",
+          "actionType": "create"
+        }
+      }
+      },
+
+    {
+      "method": "POST",
+      "path": "/register/storeteste-02-s",
+      "handler": "Authh.register",
+      "config": {
+        "policies": ["plugins::users-permissions.ratelimit"],
+        "description": "Register a new user with the default role",
+        "tags": {
+          "plugin": "users-permissions",
+          "name": "Storeteste02",
+          "actionType": "create"
+        }
+      }
+
+    },
+    {
+      "method": "GET",
+      "path": "/storeteste-02-s",
+      "handler": "storeteste02.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/storeteste-02-s/count",
+      "handler": "storeteste02.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/storeteste-02-s/:id",
+      "handler": "storeteste02.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/storeteste-02-s",
+      "handler": "storeteste02.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/storeteste-02-s/:id",
+      "handler": "storeteste02.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/storeteste-02-s/:id",
+      "handler": "storeteste02.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
