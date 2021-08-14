@@ -76,23 +76,5 @@ module.exports = {
       return sanitizeEntity(entity, { model: strapi.models.restaurant });
     }
   },
-  async owner(ctx) {
-    const { id, IsStore } = ctx.state.user ? ctx.state.user : {};
-    if (IsStore === true) {
-      const knex = strapi.connections.default;
-      const result = await knex('products')
-        .select('*')
-        .where('user_creator', id || null);
-      // .where('cities', 'berlin')
-      // .whereNot('cities.published_at', null)
-      // .join('chefs', 'restaurants.id', 'chefs.restaurant_id')
-      // .select('restaurants.name as restaurant')
-      // .select('chef.name as chef')
 
-      return (result);
-    } else {
-      return ctx.badRequest('you are not a store');
-    }
-
-  }
 };

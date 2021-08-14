@@ -48,14 +48,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "GET",
-      "path": "/orderStore",
-      "handler": "product.owner",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }
